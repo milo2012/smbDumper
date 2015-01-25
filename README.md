@@ -8,3 +8,7 @@ It allow finds the below files and extract the credentials (to be implemented)
 -	Filezilla (sitemanager.xml and filezilla.xml)   
 -	Microsoft Live Mail (.oeaccount)  
 -	Thunderbird (.s)  
+
+Below is a sample screenshot of the script.    
+![alt tag](https://raw.githubusercontent.com/milo2012/smbDumper/master/smbDumper.png)
+
