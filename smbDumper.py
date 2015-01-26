@@ -9,6 +9,7 @@ from smb.SMBConnection import SMBConnection
 
 client_machine_name = 'Random Name'
 remote_machine_name = 'server'
+
 numProcesses=3
 
 ignoreList=[]
@@ -210,6 +211,7 @@ if __name__ == '__main__':
     	parser.add_argument('-ip', dest='hostIP',action='store', help='[IP address of SMB server]')
     	parser.add_argument('-iL', dest='ipFile',  action='store', help='[Text file containing list of SMB servers]')
     	parser.add_argument('-o', dest='outFile',  action='store', help='[Output file to store results]')
+    	parser.add_argument('-n', dest='numThreads',  action='store', help='[Number of threads]')
     	parser.add_argument('-download', action='store_true', help='[Download "interesting" files]')
     	#parser.add_argument('-u', dest='username',  action='store', help='[Username]')
     	#parser.add_argument('-p', dest='password',  action='store', help='[Password]')
@@ -225,7 +227,11 @@ if __name__ == '__main__':
 	addDirList = manager.list()
 	docList = manager.list()
 	credList = manager.list()
-
+	
+	if options.numThreads:
+		numProcesses=str(options.numThreads)
+	
+	
 	if options.ipFile:
 		ipList = []
 		with open(options.ipFile) as f:
@@ -353,4 +359,5 @@ if __name__ == '__main__':
 				password=None
 				workgroup=None
 				downloadFiles(docList,username,password,workgroup)
+
 
