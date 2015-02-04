@@ -1,7 +1,8 @@
 # smbDumper
 smbDumper  
 
-smbDumper crawls anonymous SMB shares (adding authentication soon!) for "interesting" documents like doc, docx, xls, xlsx, txt, zip, pst, pdf, vmdk or filenames containing the word "password" or "pass".    
+smbDumper crawls anonymous SMB shares (adding authentication soon!) for "interesting" documents like doc, docx, xls, xlsx, txt, zip, pst, pdf, vmdk or filenames containing the word "password" or "pass".      
+
 After downloading the files, the script will check if the documents are password protected.  If yes, it will be stored in another folder for password cracking.  
 In most organization, password protected documents usually mean that they contain sensitive information.   
 
